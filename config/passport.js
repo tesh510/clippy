@@ -10,15 +10,9 @@ passport.use(
       clientSecret: process.env.GOOGLE_SECRET,
       callbackURL: process.env.GOOGLE_CALLBACK
     },
-    // The verify callback function
-    // runs everytime a user logs in with
-    // Google OAuth
     function(accessToken, refreshToken, profile, cb) {
-      // a user has logged in
       User.findOne({googleId: profile.id}).then(async function(user) {
-        // returning user
         if (user) return cb(null, user);
-        // we have a new user via OAuth!
         try {
           user = await User.create({
             name: profile.displayName,
