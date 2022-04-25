@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/clips" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title">
+  <label>Release Year:</label>
+  <input type="text" name="releaseYear">
+  <label>ESRB Rating</label>
+  <select name="esrbRating">
+    <option value="E">E</option>
+    <option value="T">T</option>
+    <option value="M">M</option>
+    <option value="NR">NR</option>
+  </select>
+  <label>Cast (separate actors with commas):</label>
+  <input type="text" name="cast">
+  <label>Now Showing:</label>
+  <input type="checkbox" name="nowShowing" checked>
+  <input type="submit" value="Add Clip">
+</form>
+
+<%- include('../partials/footer') %>
