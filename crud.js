@@ -1,14 +1,11 @@
 require('dotenv').config();
 require('./config/database'); 
  
-require('dotenv').config();
-require('./config/database');
+const Clip = require('./models/clip');
+const Character = require('./models/character');
 
-const Movie = require('./models/movie');
-const Performer = require('./models/performer');
+let clips;
 
-let movies;
-
-Movie.find({}, function(err, movieDocs) {
-  movies = movieDocs;
+Clip.find({}, function(err, clipDocs) {
+  clips = clipDocs;
 });

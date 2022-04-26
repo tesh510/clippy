@@ -1,4 +1,4 @@
-const Movie = require('../models/movie');
+const Clip = require('../models/clip');
 
 module.exports = {
   create,
@@ -6,14 +6,14 @@ module.exports = {
 };
 
 function deleteReview(req, res, next) {
-  Movie.findOne({'reviews._id': req.params.id, 'reviews.user': req.user._id}).then(function(movie) {
+  Movie.findOne({'reviews._id': req.params.id, 'reviews.user': req.user._id}).then(function(clip) {
     if (!clip) return res.redirect('/clips');
     clip.reviews.remove(req.params.id);
     clip.save().then(function() {
-      res.redirect(`/movies/${clip._id}`);
+      res.redirect(`/clips/${clip._id}`);
     }).catch(function(err) {
       return next(err);
-      // res.redirect(`/movies/${movie._id}`);
+      res.redirect(`/clips/${clip._id}`);
     });
   });
 }
