@@ -6,7 +6,7 @@ module.exports = {
 };
 
 function deleteReview(req, res, next) {
-  Movie.findOne({'reviews._id': req.params.id, 'reviews.user': req.user._id}).then(function(clip) {
+  Clip.findOne({'reviews._id': req.params.id, 'reviews.user': req.user._id}).then(function(clip) {
     if (!clip) return res.redirect('/clips');
     clip.reviews.remove(req.params.id);
     clip.save().then(function() {

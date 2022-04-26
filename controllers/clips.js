@@ -2,19 +2,10 @@ const Clip = require('../models/clip');
 
 module.exports = {
   index,
-  show,
-  new: newClip,
-  create
 };
 
 function index(req, res) {
-
+    res.render('clips/index', {title: 'clippy'})
 }
 
-function show(req, res) {
 
-}
-
-function newClip(req, res) {
-
-}
