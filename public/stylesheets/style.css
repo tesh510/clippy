@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  background-image: url('https://i.imgur.com/Q2P1s5j.png');
 }
 
 body {
@@ -188,3 +188,4 @@ li {
   border-radius: 50%;
   height: 40px;
 }
+
