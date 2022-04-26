@@ -3,15 +3,15 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Release<br>Year</th>
+      <th>R<br>Rating</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
     <% clips.forEach(function(m) { %>
       <tr>
-        <td><%= m.title %></td>
-        <td><%= m.releaseYear %></td>
+        <td><%= m.R %></td>
+        <td><%= m.Rating %></td>
         <td><a href="/clips/<%= m._id %>">DETAILS</a></td>
       </tr>
       <% }); %>

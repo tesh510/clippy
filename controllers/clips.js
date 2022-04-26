@@ -18,7 +18,3 @@ function show(req, res) {
 function newClip(req, res) {
 
 }
-
-function create(req, res) {
-
-}
